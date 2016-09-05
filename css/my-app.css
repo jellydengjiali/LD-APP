@@ -12,8 +12,8 @@
   /*-webkit-filter:blur(3px);*/
 }
 .back img{
-  width:20px;
-  height: 20px;
+  width:30px;
+  height: 30px;
 }
 .login-screen-title{
   font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
@@ -121,4 +121,24 @@
 #item-bd-login{
 font-size: 15px;
 font-family: Microsoft YaHei;
+}
+
+/*home page*/
+.icon-map{
+width:30px;
+height:30px;
+background-image: url('../img/map.png');
+background-size: cover;
+}
+.icon-data{
+  width:30px;
+  height:30px;
+  background-image: url('../img/data.png');
+  background-size: cover;
+}
+.icon-voice{
+  width:30px;
+  height:30px;
+  background-image: url('../img/voice.png');
+  background-size: cover;
 }
