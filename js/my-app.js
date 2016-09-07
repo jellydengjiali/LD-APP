@@ -13,12 +13,13 @@ var mySwiper = myApp.swiper('.swiper-container', {
   paginationClickable: true,
   nextButton: '.swiper-button-next',
   prevButton: '.swiper-button-prev',
-});    
+});
 
 // Add view
 var mainView = myApp.addView('.view-main', {
   // Because we want to use dynamic navbar, we need to enable it for this view:
-  dynamicNavbar: true
+  dynamicNavbar: true,
+  domCache: true
 });
 
 // Now we need to run the code that will be executed only for About page.
@@ -45,17 +46,19 @@ $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
   // Following code will be executed for page with data-page attribute equal to "about"
   myApp.alert('Here comes About page');
 });
-
+//获取登录的json
 myApp.onPageInit('login-screen', function (page) {
   var pageContainer = $$(page.container);
   pageContainer.find('.list-button').on('click', function () {
-    var username = pageContainer.find('input[name="username"]').val();
-    var password = pageContainer.find('input[name="password"]').val();
-    // Handle username and password
-    myApp.alert('Username: ' + username + ', Password: ' + password, function () {
-        mainView.goBack();
-      });
+      var formData = myApp.formToJSON('#login-form');
+      alert(JSON.stringify(formData));
   });
 });
-
-
+//获取注册的json
+myApp.onPageInit('register-screen', function (page) {
+  var pageContainer = $$(page.container);
+  pageContainer.find('.regi-button').on('click', function () {
+      var formData = myApp.formToJSON('#register-form');
+      alert(JSON.stringify(formData));
+      });
+  });
