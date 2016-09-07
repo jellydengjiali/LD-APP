@@ -1,31 +1,71 @@
 <div data-page="login-screen" class="page no-navbar no-toolbar no-swipeback">
     <div class="page-content login-screen-content">
       <div class="regi-bgimg">
+       <!-- <img src="../img/register.png"/> -->
        <a href="index.html" class="back">
          <img src="../img/back.png"/>
        </a>
       </div>
-      <form>
-        <div class="list-block">
-          <ul>
-            <li class="item-content">
-              <div class="item-inner">
-                  <input type="text" name="username" placeholder="you@your.com"/>
-              </div>
-            </li>
-            <li class="item-content">
-              <div class="item-inner">
-                  <input type="password" name="password" placeholder="Your password"/>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="list-block">
-          <ul>
-            <li><a htef="#" class="item-link list-button" id="regi-button">注 册</a></li>
-          </ul>
-        </div>
+      <form id="register-form" class="list-block">
+        <ul>
+          <div class="item-content">
+            <div class="item-media"><i class="icon icon-form-name"></i></div>
+            <div class="item-inner">
+              <div class="item-input">
+                <input type="text" name="username" placeholder="请输入用户名"/>
+              </div> 
+            </div>
+          </div>
+          <div class="item-content">
+            <div class="item-media"><i class="icon icon-form-tel"></i></div>
+            <div class="item-inner">
+              <div class="item-input">
+                <input type="number" name="phone" placeholder="请输入手机号"/>
+              </div> 
+            </div>
+          </div>
+          <div class="item-content">
+            <div class="item-media"><i class="icon icon-form-gender"></i></div>
+            <div class="item-inner">
+              <div class="item-title label">性别</div>
+              <div class="item-input">
+                <select>
+                  <option>男</option>
+                  <option>女</option>
+                </select>
+              </div> 
+            </div>
+          </div>
+          <div class="item-content">
+            <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+            <div class="item-inner">
+            <div class="item-title label">生日</div>
+              <div class="item-input">
+                <input type="date" name="date" />
+              </div> 
+            </div>
+          </div>
+          <div class="item-content">
+            <div class="item-media"><i class="icon icon-form-password"></i></div>
+            <div class="item-inner">
+              <div class="item-input">
+                <input type="password" name="password" placeholder="请输入密码"/>
+              </div> 
+            </div>
+          </div>
+          <div class="item-content">
+            <div class="item-media"><i class="icon icon-form-password"></i></div>
+            <div class="item-inner">
+              <div class="item-input">
+                <input type="password" name="repassword" placeholder="再次输入密码"/>
+              </div> 
+            </div>
+          </div>
+        </ul>
       </form>
+      <div class="content-block">
+        <a htef="#" class="item-link list-button" id="regi-button">注 册</a>
+      </div>
       <div class="list-block-label">
       <a href="https://passport.baidu.com/v2/?login" id="item-bd-login">百度账号登录</a>
       </div>
