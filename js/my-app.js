@@ -41,11 +41,11 @@ $$(document).on('pageInit', function (e) {
   }
 });
 
-// Option 2. Using live 'pageInit' event handlers for each page
-$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
-  // Following code will be executed for page with data-page attribute equal to "about"
-  myApp.alert('Here comes About page');
-});
+// // Option 2. Using live 'pageInit' event handlers for each page
+// $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
+//   // Following code will be executed for page with data-page attribute equal to "about"
+//   myApp.alert('Here comes About page');
+// });
 //获取登录的json
 myApp.onPageInit('login-screen', function (page) {
   var pageContainer = $$(page.container);

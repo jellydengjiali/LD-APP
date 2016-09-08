@@ -11,10 +11,7 @@
   -webkit-filter:brightness(0.9);
   /*-webkit-filter:blur(3px);*/
 }
-.back img{
-  width:30px;
-  height: 30px;
-}
+
 .login-screen-title{
   font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
   color:white;
@@ -148,4 +145,31 @@ background-size: cover;
   height:30px;
   background-image: url('../img/voice.png');
   background-size: cover;
+}
+/*about page*/
+.icon-github{
+  width:24px;
+  height: 24px;
+  background-image: url("../img/github.png");
+
+}
+#about-page{
+/*background-color: rgb(81, 53, 49);*/
+}
+#about-img{
+  width: 100%;
+  height: 40%;
+}
+.about-text{
+  color:#000;
+  text-align: center;
+  font-family: Microsoft YaHei;
+}
+.about-text p{
+  font-size: 15px;
+}
+.about-border{
+  border-bottom: 1px solid #0966ef;
+  width: 20%;
+  margin-left: 40%;
 }
