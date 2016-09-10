@@ -73,3 +73,20 @@ myApp.onPageInit('register-screen', function (page) {
       alert(JSON.stringify(formData));
       });
   });
+
+  //settings page
+myApp.onPageInit('settings',function(page){
+  var pageContainer=$$(page.container);
+  pageContainer.find('#picker-map').on('click',function() {
+    var pickerMap = myApp.picker({
+      input: '#picker-map',
+      cols: [
+          {
+              textAlign: 'center',
+              values: ['百度地图', '高德地图', '谷歌地图']
+          }
+      ]
+  });
+  pickerMap.open();
+  })
+})
