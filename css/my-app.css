@@ -185,3 +185,6 @@ background-image: url(../img/Q&A.PNG);
 .content-block-title{
   font-size: 13px;
 }
+.setting-checkbox{
+text-align: right;
+}
