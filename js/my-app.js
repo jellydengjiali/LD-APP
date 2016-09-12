@@ -62,7 +62,21 @@ myApp.onPageInit('login-screen', function (page) {
   var pageContainer = $$(page.container);
   pageContainer.find('.list-button').on('click', function () {
       var formData = myApp.formToJSON('#login-form');
-      alert(JSON.stringify(formData));
+      $.ajax({
+        url: "regist.php",
+        data: {"method": "ajaxLogin", "formData": formData},
+        type: "POST",
+        dataType: "json",
+        async: false,
+        cache: false,
+        success: function (result) {
+          if(result) {
+              window.location.href = 'home.html';
+          } else {
+            alert("账号或密码错误");
+          }
+        }
+      });
   });
 });
 //获取注册的json
@@ -70,10 +84,33 @@ myApp.onPageInit('register-screen', function (page) {
   var pageContainer = $$(page.container);
   pageContainer.find('.regi-button').on('click', function () {
       var formData = myApp.formToJSON('#register-form');
-      alert(JSON.stringify(formData));
-      });
+      if(validateLoginname(formData.name) && 
+         validateMobile(formData.phone) && 
+         validateBirthDay(formData.date) && 
+         validatePassword(formData.password) &&
+         (formData.password == formData.repassword)) {
+        alert(JSON.stringify(formData));
+        $.ajax({
+          url: "regist.php",
+          data: {"method": "ajaxRegist", "formData": formData},
+          type: "POST",
+          dataType: "json",
+          async: false,
+          cache: false,
+          success: function (result) {
+            if(result) {
+              alert("注册成功");
+              window.location.href = 'home.html';
+            } else if (!result) {
+              alert("用户名已注册");
+            } else {
+              alert("注册失败");
+            }
+          }
+        });
+      }
   });
-
+});
   //settings page
 myApp.onPageInit('settings',function(page){
   var pageContainer=$$(page.container);
@@ -88,5 +125,66 @@ myApp.onPageInit('settings',function(page){
       ]
   });
   pickerMap.open();
-  })
-})
+  });
+});
+
+// 验证登录名
+function validateLoginname (username) {
+  if(!username) {
+    alert("用户名不能为空！");
+    return false;
+  }
+
+  if(username.length < 3 || username.length > 10) {
+    alert("用户名长度必须在3~10之间");
+    return false;
+  }
+
+  if(!/^[a-zA-Z]{1}[a-zA-Z0-9_]{3,15}$/.test(username)) {
+    alert("用户名只能是字母、数字和下划线");
+    return false;
+  }
+
+  return true;
+}
+
+// 验证手机号
+function validateMobile (phone) {
+   if(!phone) {
+      alert("手机号不能为空！");
+      return false;
+   }
+
+   if(phone.length != 11) {
+      alert("手机号位数不对！");
+      return false;
+   }
+
+   return true;
+}
+
+
+// 验证生日
+function validateBirthDay (birthday) {
+  if(!birthday) {
+    alert("生日不能为空！");
+    return false;
+  }
+
+  return true;
+}
+
+// 验证密码
+function validatePassword (password) {
+  if(!password) {
+    alert("密码不能为空！");
+    return false;
+  }
+
+  if(password.length < 6) {
+    alert("密码长度必须大于6位！");
+    return false;
+  }
+
+  return true;
+}
