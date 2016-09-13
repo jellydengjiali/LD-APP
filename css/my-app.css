@@ -194,3 +194,11 @@ background-image: url("../img/Q&A.PNG")
 .setting-checkbox{
 text-align: right;
 }
+/*home pae*/
+#homepage-content{
+padding: 0 0;
+}
+#home-contet{
+  margin: 0 0;
+  padding: 0 0;
+}
