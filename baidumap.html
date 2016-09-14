@@ -7,6 +7,7 @@
 		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
 	</style>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8BEqklo1y0RB15gHNQtQyCVqwGs3nppL"></script>
+<<<<<<< HEAD
 	<title>我的运动轨迹</title>
 </head>
 <body>
@@ -14,6 +15,15 @@
 	<script type="text/javascript" src="http://developer.baidu.com/map/custom/stylelist.js"></script>
  	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 	<script type="text/javascript">
+=======
+	<title>单个标注点沿直线的轨迹运动</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+>>>>>>> a8c238c18cc4627ef0405ec7fd628568a6d2db8b
 	// 百度地图API功能
 	var map = new BMap.Map("allmap");
 	map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);
@@ -57,12 +67,19 @@
 		run();
 	},1500);
 	changeMapStyle('light')
+<<<<<<< HEAD
 	
+=======
+	sel.value = 'light';
+>>>>>>> a8c238c18cc4627ef0405ec7fd628568a6d2db8b
 
 	function changeMapStyle(style){
 		map.setMapStyle({style:style});
 		$('#desc').html(mapstyles[style].desc);
 	}
 </script>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+>>>>>>> a8c238c18cc4627ef0405ec7fd628568a6d2db8b

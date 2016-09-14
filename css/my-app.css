@@ -196,6 +196,7 @@ background-image: url("../img/Q&A.PNG")
 }
 /*home pae*/
 #homepage-content{
+<<<<<<< HEAD
   padding: 15px 0;
 }
 #home-contet{
@@ -246,3 +247,11 @@ background-image: url("../img/Q&A.PNG")
   height: 24px;
   border-radius: 3px;
 }
+=======
+padding: 0 0;
+}
+#home-contet{
+  margin: 0 0;
+  padding: 0 0;
+}
+>>>>>>> a8c238c18cc4627ef0405ec7fd628568a6d2db8b
