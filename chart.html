@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Charts</title>
+    <!-- 引入 echarts.js -->
+     <script src="js/echarts.min.js"></script>
+     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 300px;height: 280px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('main'));
+var labelRight = {
+    normal: {
+        position: 'right'
+    }
+};
+// 显示标题，图例和空的坐标轴
+myChart.setOption({
+    color: ['#3398DB'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'公里',
+            type:'bar',
+            barWidth: '60%',
+            data:[10, 52, 200, 334, 390, 330, 220]
+        }
+    ]
+});
+
+
+// 异步加载数据
+function fetchData(cb) {
+    // 通过 setTimeout 模拟异步加载
+    setTimeout(function () {
+        cb({
+            categories: ["星期一","星期二","星期三","星期四","星期五"],
+            data: [1, 5, 10, 15, 20]
+        });
+    }, 3000);
+};
+
+myChart.showLoading();
+
+fetchData(function (data) {
+    myChart.hideLoading();
+    myChart.setOption({
+        xAxis: {
+            data: data.categories
+        },
+        series: [{
+            // 根据名字对应到相应的系列
+            name: '水量',
+            data: data.data
+        }]
+    });
+});
+
+    </script>
+    
+</body>
+</html>

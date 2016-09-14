@@ -89,7 +89,6 @@ myApp.onPageInit('register-screen', function (page) {
          validateBirthDay(formData.date) && 
          validatePassword(formData.password) &&
          (formData.password == formData.repassword)) {
-        alert(JSON.stringify(formData));
         $.ajax({
           url: "regist.php",
           data: {"method": "ajaxRegist", "formData": formData},
@@ -188,3 +187,8 @@ function validatePassword (password) {
 
   return true;
 }
+//charts page
+$$('.char-detail').on('click',function(){
+    window.location.href = 'chardetails.html';
+})
+

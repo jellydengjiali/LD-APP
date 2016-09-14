@@ -4,7 +4,7 @@
 	{
 		if($_POST["method"] == "ajaxRegist") {
 			$formData = $_POST["formData"];
-			$con=mysql_connect("localhost","root","250771564");
+			$con=mysql_connect("localhost","root","");
 			if(!$con) {
 				die('Count not connect SQL.');
 			}
@@ -40,7 +40,7 @@
 			$formData = $_POST['formData'];
 			$username = $formData['name'];
 			$password = $formData['password'];
-			$con=mysql_connect("localhost","root","250771564");
+			$con=mysql_connect("localhost","root","");
 			if(!$con) {
 				die('Count not connect SQL.');
 			}

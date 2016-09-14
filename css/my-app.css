@@ -192,5 +192,57 @@ background-image: url("../img/Q&A.PNG")
   font-size: 13px;
 }
 .setting-checkbox{
-text-align: right;
+  text-align: right;
+}
+/*home pae*/
+#homepage-content{
+  padding: 15px 0;
+}
+#home-contet{
+  margin: 20px 0;
+  padding: 20px 0;
+}
+#chart-tab{
+  border:1px solid #fff;
+  height: 35px;
+  padding:0px 0px;
+  border-radius: 5px;
+  margin: 5px 10px;
+}
+#char-item-content{
+  padding: 0 0;
+}
+.char-detail{
+  margin-left: 8%;
+  font-size: 14px;
+  border: 1px solid #5ac8fa;
+  color: #5ac8fa;
+  padding: 5px 5px;
+  border-radius: 5px;
+  width: 80%;
+  color: #007aff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+.icon-clock{
+  background: url(../img/clock.png);
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+}
+.icon-count{
+    background: url(../img/count.png);
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+}
+.icon-road{
+  background: url(../img/road.png);
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
 }
