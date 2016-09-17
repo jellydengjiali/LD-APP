@@ -1,6 +1,10 @@
 *{
   font-family: Microsoft YaHei;
 }
+#egimg{
+  width:100%;
+}
+
 /*login page*/
 .bg {
   width: 100%;
@@ -172,6 +176,13 @@ background-size: cover
   width: 20%;
   margin-left: 40%
 }
+/*pre-info page*/
+#head-pic{
+  margin-left: 35%;
+  width:100px;
+  height: 100px;
+  margin-top: 20px;
+}
 /*help page*/
 .icon-QA{
 width:30px;
@@ -179,7 +190,7 @@ height:30px;
 background-image: url("../img/Q&A.PNG")
 }
 /*settings page*/
-.setting-title{
+#setting-title{
   text-align: center;
   padding-top: 10px;
   background-color: #2196f3;
@@ -247,11 +258,16 @@ background-image: url("../img/Q&A.PNG")
   height: 24px;
   border-radius: 3px;
 }
-=======
-padding: 0 0;
+#homepage-content{
+  padding: 0px 0px;
 }
 #home-contet{
   margin: 0 0;
   padding: 0 0;
 }
->>>>>>> a8c238c18cc4627ef0405ec7fd628568a6d2db8b
+.icon-home{
+  background: url(../img/homeback.png);
+  width:24px;
+  height:24px;
+  position: absolute;
+}

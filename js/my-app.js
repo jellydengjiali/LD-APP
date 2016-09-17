@@ -128,29 +128,14 @@ myApp.onPageInit('settings',function(page){
 });
 
 
+
+
 // 语音识别
 $$('#speaker').on('click', function() {
   var t = (new Date()).getTime();
   $$('iframe')[2].src = "http://boscdn.bpc.baidu.com/mms-res/efe-voice-playground/index4.html?t=" + t;
   // $$('#speaker-frame').src = "http://boscdn.bpc.baidu.com/mms-res/efe-voice-playground/index4.html?t=" + t;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // 验证登录名
@@ -216,5 +201,8 @@ function validatePassword (password) {
 //charts page
 $$('.char-detail').on('click',function(){
     window.location.href = 'chardetails.html';
+})
+$$('.icon-home').on('click',function(){
+    window.location.href = 'home.html';
 })
 
